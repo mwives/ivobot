@@ -7,4 +7,4 @@ async function aninhaMessageHandler(messageHelper: WaWebJsMessageHelper) {
   );
 }
 
-export { aninhaMessageHandler as baldezMessageHandler };
+export { aninhaMessageHandler };

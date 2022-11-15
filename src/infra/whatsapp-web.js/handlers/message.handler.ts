@@ -1,6 +1,6 @@
 import { Client } from "whatsapp-web.js";
 import {
-  baldezMessageHandler,
+  aninhaMessageHandler,
   marcusMessageHandler,
   meMessageHandler,
 } from "../messages/contacts";
@@ -22,7 +22,7 @@ function messageHandlerFactory(client: Client) {
       ["Marcus Vinicius Batista Siqueira"]: () =>
         marcusMessageHandler(messageHelper),
 
-      ["Baldez"]: () => baldezMessageHandler(messageHelper),
+      ["Baldez"]: () => aninhaMessageHandler(messageHelper),
     };
 
     const contactName = (await msg.getContact()).name;
