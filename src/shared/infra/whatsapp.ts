@@ -1,5 +1,5 @@
-import { whatsappWebClientFactory } from "../../client/factories";
-import { startHandlers } from "../../client/handlers";
+import { whatsappWebClientFactory } from "../../infra/whatsapp-web.js/factories";
+import { startHandlers } from "../../infra/whatsapp-web.js/handlers";
 
 function whatsappWebJsBootstrap() {
   const client = whatsappWebClientFactory();
