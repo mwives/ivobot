@@ -5,9 +5,7 @@
   "scripts": {
     "start:dev": "ts-node-dev --respawn --transpile-only src/index.ts"
   },
-  "dependencies": {
-    "venom-bot": "^4.3.3"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@types/node": "^18.11.9",
     "ts-node-dev": "^2.0.0",
