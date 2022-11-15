@@ -1,7 +1,7 @@
 import { Client, Message } from "whatsapp-web.js";
 import { MessageHelper } from "../MessageHelper";
 
-class WaWebJsMessageHelper implements MessageHelper<Message> {
+class WaWebJsMessageHelper implements MessageHelper {
   constructor(private readonly client: Client, private readonly msg: Message) {}
 
   public get contactTo(): string {
@@ -10,6 +10,10 @@ class WaWebJsMessageHelper implements MessageHelper<Message> {
 
   compareMessageBody(msgCondition: string): boolean {
     return this.msg.body.toLowerCase() === msgCondition;
+  }
+
+  includeMessageBody(msg: string): boolean {
+    return this.msg.body.toLowerCase().includes(msg);
   }
 
   async reply(msg: string): Promise<void> {
@@ -25,6 +29,16 @@ class WaWebJsMessageHelper implements MessageHelper<Message> {
     replyMsg: string
   ): Promise<void> {
     if (!this.compareMessageBody(msgCondition)) return;
+
+    await this.reply(replyMsg);
+    return;
+  }
+
+  async conditionallyIncludeReply(
+    msgCondition: string,
+    replyMsg: string
+  ): Promise<void> {
+    if (!this.includeMessageBody(msgCondition)) return;
 
     await this.reply(replyMsg);
     return;

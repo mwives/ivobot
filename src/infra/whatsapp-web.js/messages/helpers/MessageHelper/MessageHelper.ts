@@ -1,4 +1,4 @@
-interface MessageHelper<TMessage> {
+interface MessageHelper {
   compareMessageBody(msgCondition: string): boolean;
 
   reply(msg: string): Promise<void>;
@@ -6,6 +6,11 @@ interface MessageHelper<TMessage> {
   sendMessage(to: string, msg: string): Promise<void>;
 
   conditionallyReply(msgCondition: string, replyMsg: string): Promise<void>;
+
+  conditionallyIncludeReply(
+    msgCondition: string,
+    replyMsg: string
+  ): Promise<void>;
 
   conditionallySendMessage(
     msgCondition: string,
