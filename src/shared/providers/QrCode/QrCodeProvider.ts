@@ -3,3 +3,5 @@ abstract class QrCodeProvider {
     throw new Error("Method not implemented.");
   }
 }
+
+export { QrCodeProvider };
