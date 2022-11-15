@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
+    "start": "ts-node src/index.ts",
     "start:dev": "ts-node-dev --respawn --transpile-only src/index.ts"
   },
   "dependencies": {
     "qrcode-terminal": "^0.12.0",
+    "ts-node": "^10.9.1",
     "whatsapp-web.js": "^1.18.3"
   },
   "devDependencies": {
